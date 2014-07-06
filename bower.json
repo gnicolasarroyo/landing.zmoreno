@@ -1,0 +1,14 @@
+{
+  "name": "tucasaprocrear",
+  "version": "1.2.0",
+  "authors": [
+    "Arq Zacarias Moreno <arquitectozacariasmoreno@gmail.com>",
+    "G. Nicolas Arroyo <g.nicolas.arroyo@gmail.com>",
+    "German Bosio <gb.ath.cx@gmail.com>"
+  ],
+  "homepage": "www.tucasaprocrear.com.ar",
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "backbone": "~1.1.2"
+  }
+}
