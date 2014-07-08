@@ -967,36 +967,52 @@
                 <div class="form-group">
                   <div class="col-md-12">
                     <p>Utiliza este formulario para hacernos llegar tu mensaje. Por favor completa toda la información para que podamos responderte lo antes posible.</p>
+                    <p data-role="notification" class="lead"></P>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-6">
                     <label>Nombre</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="name" class="form-control">
+                    <div class="has-error">
+                      <p data-error="name" class="help-block"></p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-6">
                     <label>Localidad</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="localy" class="form-control">
+                    <div class="has-error">
+                      <p data-error="localy" class="help-block"></p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-6">
                     <label>Correo electrónico</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="email" class="form-control">
+                    <div class="has-error">
+                      <p data-error="email" class="help-block"></p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-6">
                     <label>Teléfono</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="phone" class="form-control">
+                    <div class="has-error">
+                      <p data-error="phone" class="help-block"></p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-12">
                     <label>Mensaje</label>
-                    <textarea class="form-control" rows="5"></textarea>
+                    <textarea name="message" class="form-control" rows="5"></textarea>
+                    <div class="has-error">
+                      <p data-error="message" class="help-block"></p>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group">
@@ -1049,5 +1065,6 @@
       </div> <!-- end .container -->
     </footer>
     <script type="text/javascript" src="assets/js/tucasaprocrear.base.min.js"></script>
+    <script type="text/javascript" src="assets/js/tucasaprocrear.min.js"></script>
   </body>
 </html>

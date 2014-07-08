@@ -23,28 +23,34 @@ module.exports = (grunt) ->
         'src/style/section.styl'
         'src/style/footer.styl'
       ]
+      coffee: [
+        'src/app/app.coffee'
+      ]
     
     concat:
       base_css : files : '<%= meta.assets_path %>/css/<%= pkg.name %>.base.min.css' : '<%= source.bower_css %>'
       base_js  : files : '<%= meta.assets_path %>/js/<%= pkg.name %>.base.min.js'   : '<%= source.bower_js %>'
       stylus   : files : '<%= meta.build_path %>/<%= pkg.name %>.styl'              : '<%= source.stylus %>'
-      #coffee   : files : '<%= meta.build_path %>/<%= pkg.name %>.coffee' : '<%= source.coffee %>'
+      coffee   : files : '<%= meta.build_path %>/<%= pkg.name %>.coffee'            : '<%= source.coffee %>'
       
     stylus:
       app:
         files: '<%= meta.build_path %>/<%= pkg.name %>.min.css' : '<%= meta.build_path %>/<%= pkg.name %>.styl'
         
-    #coffee:
-    #  app: 
-    #    files: '<%= meta.build_path %>/<%= pkg.name %>.js' : '<%= meta.build_path %>/<%= pkg.name %>.coffee'
+    coffee:
+      app:
+        files: '<%= meta.build_path %>/<%= pkg.name %>.js' : '<%= meta.build_path %>/<%= pkg.name %>.coffee'
     
-    #uglify:
-    #  options: 
-    #    banner: "<%= meta.banner %>"
+    uglify:
+      options: 
+        banner: "<%= meta.banner %>"
+      js:
+        options: 
+          mangle: false  
+        files: '<%= meta.assets_path %>/js/<%= pkg.name %>.min.js'   : '<%= meta.build_path %>/<%= pkg.name %>.js'
     #  css:
     #    files: '<%= meta.assets_path %>/css/<%= pkg.name %>.min.css' : '<%= meta.build_path %>/<%= pkg.name %>.css'
-    #  js: 
-    #    files: '<%= meta.assets_path %>/js/<%= pkg.name %>.min.js'   : '<%= meta.build_path %>/<%= pkg.name %>.js'
+    
       
     copy:
       font:
@@ -74,4 +80,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-notify'
   
-  grunt.registerTask 'default', ['concat:base_js', 'concat:base_css', 'concat:stylus', 'stylus:app', 'copy:font', 'copy:css']
+  grunt.registerTask 'default', ['concat:base_js', 'concat:base_css', 'concat:stylus', 'stylus:app', 'copy:font', 'copy:css', 'concat:coffee', 'coffee:app', 'uglify:js']
